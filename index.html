@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Portfolio of S. Bala Jaya Keerthi, BCA Student and aspiring software professional.">
+    <meta name="keywords" content="S Bala Jaya Keerthi, BCA, Python, HTML, CSS, Portfolio">
+    <meta name="author" content="S. Bala Jaya Keerthi">
+
+    <title>S. Bala Jaya Keerthi | Portfolio</title>
+
+    <style>
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #050510;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           BACKGROUND
+        ========================= */
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: #7c3aed;
+            filter: blur(180px);
+            opacity: 0.18;
+            border-radius: 50%;
+            top: -200px;
+            left: -150px;
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            width: 450px;
+            height: 450px;
+            background: #00f5ff;
+            filter: blur(180px);
+            opacity: 0.13;
+            border-radius: 50%;
+            bottom: -200px;
+            right: -150px;
+            z-index: -2;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(92%, 1000px);
+            padding: 14px 22px;
+            border: 1px solid rgba(255,255,255,0.12);
+            background: rgba(8, 8, 20, 0.75);
+            backdrop-filter: blur(18px);
+            border-radius: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 0 30px rgba(0,245,255,0.08);
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 800;
+            background: linear-gradient(90deg, #00f5ff, #a855f7, #ff3cac);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 24px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #c9c9d8;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #00f5ff;
+            text-shadow: 0 0 15px #00f5ff;
+        }
+
+        /* =========================
+           SLIDE CONTAINER
+        ========================= */
+
+        .slides {
+            width: 100%;
+        }
+
+        .slide {
+            min-height: 100vh;
+            padding: 120px 8% 70px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container {
+            width: min(1150px, 100%);
+            margin: auto;
+        }
+
+        /* =========================
+           HOME
+        ========================= */
+
+        .home-content {
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 8px 15px;
+            border: 1px solid rgba(0,245,255,0.4);
+            border-radius: 30px;
+            color: #00f5ff;
+            font-size: 13px;
+            margin-bottom: 20px;
+            background: rgba(0,245,255,0.05);
+        }
+
+        h1 {
+            font-size: clamp(48px, 7vw, 88px);
+            line-height: 0.95;
+            margin-bottom: 22px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(
+                90deg,
+                #00f5ff,
+                #7c3aed,
+                #ff3cac
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .home-content h2 {
+            color: #b9b9c8;
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .home-content p {
+            color: #9999aa;
+            max-width: 650px;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        /* =========================
+           PHOTO
+        ========================= */
+
+        .photo-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .photo {
+    width: 270px;
+    height: 320px;
+    border-radius: 30px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    background:
+        linear-gradient(#0c0c1b, #0c0c1b) padding-box,
+        linear-gradient(135deg, #00f5ff, #7c3aed, #ff3cac) border-box;
+    box-shadow:
+        0 0 30px rgba(0,245,255,0.15),
+        0 0 70px rgba(124,58,237,0.15);
+    animation: float 4s ease-in-out infinite;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+        .photo::before {
+            content: "";
+            position: absolute;
+            inset: 12px;
+            border: 1px dashed rgba(255,255,255,0.18);
+            border-radius: 22px;
+        }
+
+        .photo span {
+            color: #77778b;
+            font-size: 14px;
+            z-index: 2;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        /* =========================
+           SECTION TITLES
+        ========================= */
+
+        .section-title {
+            margin-bottom: 45px;
+        }
+
+        .section-title small {
+            color: #00f5ff;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .section-title h2 {
+            font-size: clamp(38px, 5vw, 60px);
+            margin-top: 8px;
+        }
+
+        /* =========================
+           ABOUT / EDUCATION
+        ========================= */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .card {
+            padding: 28px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 22px;
+            background: rgba(255,255,255,0.035);
+            backdrop-filter: blur(15px);
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0,245,255,0.4);
+            box-shadow: 0 15px 40px rgba(0,245,255,0.08);
+        }
+
+        .card h3 {
+            color: #00f5ff;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .card p {
+            color: #a5a5b5;
+            line-height: 1.7;
+        }
+
+        .education-item {
+            border-left: 2px solid #7c3aed;
+            padding-left: 20px;
+            margin-bottom: 25px;
+        }
+
+        .education-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .education-item h3 {
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .education-item span {
+            color: #00f5ff;
+            font-size: 14px;
+        }
+
+        /* =========================
+           SKILLS & PROJECTS
+        ========================= */
+
+        .skills-projects {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 30px;
+        }
+
+        .skill {
+            margin-bottom: 22px;
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            color: #d6d6e2;
+        }
+
+        .skill-bar {
+            height: 7px;
+            border-radius: 20px;
+            background: #171724;
+            overflow: hidden;
+        }
+
+        .skill-bar span {
+            display: block;
+            height: 100%;
+            border-radius: 20px;
+            background: linear-gradient(90deg, #00f5ff, #7c3aed, #ff3cac);
+            animation: loading 1.8s ease;
+        }
+
+        .python {
+            width: 75%;
+        }
+
+        .html {
+            width: 90%;
+        }
+
+        .css {
+            width: 85%;
+        }
+
+        @keyframes loading {
+            from {
+                width: 0;
+            }
+        }
+
+        .project {
+            padding: 25px;
+            border-radius: 20px;
+            background: linear-gradient(
+                135deg,
+                rgba(0,245,255,0.06),
+                rgba(124,58,237,0.08)
+            );
+            border: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 18px;
+        }
+
+        .project:last-child {
+            margin-bottom: 0;
+        }
+
+        .project h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .project .tech {
+            color: #00f5ff;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            color: #a5a5b5;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           HOBBIES / CONTACT
+        ========================= */
+
+        .final-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .hobbies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .hobby {
+            padding: 12px 18px;
+            border-radius: 30px;
+            border: 1px solid rgba(168,85,247,0.4);
+            background: rgba(168,85,247,0.07);
+            color: #ddd;
+            transition: 0.3s;
+        }
+
+        .hobby:hover {
+            transform: scale(1.05);
+            border-color: #ff3cac;
+            box-shadow: 0 0 20px rgba(255,60,172,0.15);
+        }
+
+        .contact-info {
+            margin-top: 15px;
+        }
+
+        .contact-info p {
+            margin-bottom: 14px;
+            color: #aaaaba;
+        }
+
+        .contact-info strong {
+            color: #ffffff;
+        }
+
+        .declaration {
+            margin-top: 25px;
+            padding: 20px;
+            border-left: 3px solid #00f5ff;
+            background: rgba(0,245,255,0.035);
+            color: #9999aa;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           SLIDE NAVIGATION
+        ========================= */
+
+        .slide-controls {
+            position: fixed;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 500;
+        }
+
+        .dot {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            border: 1px solid #666;
+            background: transparent;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .dot.active {
+            background: #00f5ff;
+            border-color: #00f5ff;
+            box-shadow: 0 0 15px #00f5ff;
+            transform: scale(1.3);
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #666678;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            font-size: 13px;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            nav {
+                width: 94%;
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+
+            nav ul li a {
+                font-size: 12px;
+            }
+
+            .home-content,
+            .about-grid,
+            .skills-projects,
+            .final-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .photo-wrapper {
+                order: -1;
+            }
+
+            .photo {
+                width: 220px;
+                height: 260px;
+            }
+
+            .slide {
+                padding: 120px 6% 80px;
+            }
+
+            .slide-controls {
+                right: 12px;
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            nav .logo {
+                font-size: 16px;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            h1 {
+                font-size: 48px;
+            }
+
+            .home-content h2 {
+                font-size: 18px;
+            }
+
+            .section-title h2 {
+                font-size: 38px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <nav>
+        <div class="logo">SBJK.</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- =========================
+         SLIDE DOTS
+    ========================== -->
+
+    <div class="slide-controls">
+        <button class="dot active" data-slide="home"></button>
+        <button class="dot" data-slide="about"></button>
+        <button class="dot" data-slide="skills"></button>
+        <button class="dot" data-slide="contact"></button>
+    </div>
+
+
+    <main class="slides">
+
+        <!-- =========================
+             SLIDE 01 — HOME
+        ========================== -->
+
+        <section class="slide" id="home">
+
+            <div class="container home-content">
+
+                <div>
+
+                    <span class="tag">01 / PORTFOLIO</span>
+
+                    <h1>
+                        S. Bala<br>
+                        <span class="gradient-text">Jaya Keerthi</span>
+                    </h1>
+
+                    <h2>
+                        BCA Student | Aspiring Software Professional
+                    </h2>
+
+                    <p>
+                        Motivated and enthusiastic first-year BCA student
+                        with a strong interest in technology and software
+                        development. Currently building a foundation in
+                        HTML, CSS, and Python while developing problem-solving,
+                        creativity, and communication skills.
+                    </p>
+
+                </div>
+
+
+                <div class="photo-wrapper">
+
+                    <!-- Replace this box with your actual image later -->
+                   <div class="photo">
+    <img src="profile.png" alt="S. Bala Jaya Keerthi">
+    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SLIDE 02 — ABOUT
+        ========================== -->
+
+        <section class="slide" id="about">
+
+            <div class="container">
+
+                <div class="section-title">
+                    <small>02 / ABOUT ME</small>
+                    <h2>
+                        About <span class="gradient-text">Me</span>
+                    </h2>
+                </div>
+
+
+                <div class="about-grid">
+
+                    <div class="card">
+
+                        <h3>Professional Introduction</h3>
+
+                        <p>
+                            Eager to learn new technologies, gain practical
+                            experience, and contribute effectively to future
+                            academic and professional projects.
+                        </p>
+
+                        <br>
+
+                        <p>
+                            I am a quick learner and creative thinker with
+                            an enthusiasm for technology and developing new
+                            skills.
+                        </p>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <h3>Education</h3>
+
+                        <div class="education-item">
+
+                            <h3>Bachelor of Computer Applications</h3>
+
+                            <span>
+                                Vignan University | 2026 – Present
+                            </span>
+
+                        </div>
+
+
+                        <div class="education-item">
+
+                            <h3>Intermediate — BiPC</h3>
+
+                            <span>
+                                Sri Chaitanya | 971 / 1000 — 97.1%
+                            </span>
+
+                        </div>
+
+
+                        <div class="education-item">
+
+                            <h3>Secondary School Education</h3>
+
+                            <span>
+                                Sri Venkateshwara Bala Kuteer
+                                | 489 / 600 — 81.5%
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SLIDE 03 — SKILLS
+        ========================== -->
+
+        <section class="slide" id="skills">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <small>03 / SKILLS & PROJECTS</small>
+
+                    <h2>
+                        My <span class="gradient-text">Skills</span>
+                    </h2>
+
+                </div>
+
+
+                <div class="skills-projects">
+
+                    <!-- SKILLS -->
+
+                    <div class="card">
+
+                        <h3>Technical Skills</h3>
+
+                        <br>
+
+                        <div class="skill">
+
+                            <div class="skill-header">
+                                <span>HTML</span>
+                                <span>90%</span>
+                            </div>
+
+                            <div class="skill-bar">
+                                <span class="html"></span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="skill">
+
+                            <div class="skill-header">
+                                <span>CSS</span>
+                                <span>85%</span>
+                            </div>
+
+                            <div class="skill-bar">
+                                <span class="css"></span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="skill">
+
+                            <div class="skill-header">
+                                <span>Python</span>
+                                <span>75%</span>
+                            </div>
+
+                            <div class="skill-bar">
+                                <span class="python"></span>
+                            </div>
+
+                        </div>
+
+
+                        <br>
+
+                        <p>
+                            Basic problem-solving and logical thinking,
+                            willingness to learn new technologies,
+                            and creative presentation skills.
+                        </p>
+
+                    </div>
+
+
+                    <!-- PROJECTS -->
+
+                    <div>
+
+                        <div class="project">
+
+                            <h3>Web Page Development</h3>
+
+                            <div class="tech">
+                                HTML • CSS
+                            </div>
+
+                            <p>
+                                Created and practiced developing basic web
+                                pages using HTML and CSS, focusing on page
+                                structure, styling, layouts, and
+                                user-friendly presentation.
+                            </p>
+
+                        </div>
+
+
+                        <div class="project">
+
+                            <h3>Python Programming Practice</h3>
+
+                            <div class="tech">
+                                Python
+                            </div>
+
+                            <p>
+                                Practiced basic Python programming concepts
+                                and problem-solving through simple programs
+                                and coding exercises.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SLIDE 04 — CONTACT
+        ========================== -->
+
+        <section class="slide" id="contact">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <small>04 / CONNECT</small>
+
+                    <h2>
+                        Beyond <span class="gradient-text">Code</span>
+                    </h2>
+
+                </div>
+
+
+                <div class="final-grid">
+
+                    <!-- HOBBIES -->
+
+                    <div class="card">
+
+                        <h3>Hobbies & Interests</h3>
+
+                        <div class="hobbies">
+
+                            <div class="hobby">🎤 Singing</div>
+                            <div class="hobby">💃 Dancing</div>
+                            <div class="hobby">🎨 Craft Making</div>
+                            <div class="hobby">🖌️ Painting</div>
+
+                        </div>
+
+                        <br>
+
+                        <h3>Strengths</h3>
+
+                        <p style="line-height: 1.8; color:#aaaaba;">
+                            • Quick learner<br>
+                            • Creative thinker<br>
+                            • Enthusiastic about learning technology<br>
+                            • Good interest in developing new skills<br>
+                            • Adaptable and willing to take on new challenges
+                        </p>
+
+                    </div>
+
+
+                    <!-- CONTACT -->
+
+                    <div class="card">
+
+                        <h3>Let's Connect</h3>
+
+                        <div class="contact-info">
+
+                            <p>
+                                <strong>Name:</strong><br>
+                                S. Bala Jaya Keerthi
+                            </p>
+
+                            <p>
+                                <strong>Email:</strong><br>
+                                sbjkeerthi@gmail.com
+                            </p>
+
+                            <p>
+                                <strong>Phone:</strong><br>
+                                8125465303
+                            </p>
+
+                            <p>
+                                <strong>Location:</strong><br>
+                                Guntur, Andhra Pradesh
+                            </p>
+
+                        </div>
+
+
+                        <div class="declaration">
+
+                            I hereby declare that the information
+                            provided above is true and correct to the
+                            best of my knowledge and belief.
+
+                            <br><br>
+
+                            <strong>
+                                S. Bala Jaya Keerthi
+                            </strong>
+
+                            <br>
+
+                            Guntur | 31-10-2026
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        © 2026 S. Bala Jaya Keerthi
+        <br>
+        BCA Student | Aspiring Software Professional
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        const dots = document.querySelectorAll(".dot");
+        const sections = document.querySelectorAll(".slide");
+
+        /* Smooth navigation using slide dots */
+
+        dots.forEach(dot => {
+
+            dot.addEventListener("click", () => {
+
+                const target = document.getElementById(
+                    dot.dataset.slide
+                );
+
+                target.scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            });
+
+        });
+
+
+        /* Detect current slide */
+
+        const observer = new IntersectionObserver(
+
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        dots.forEach(dot => {
+                            dot.classList.remove("active");
+                        });
+
+                        const activeDot =
+                            document.querySelector(
+                                `[data-slide="${entry.target.id}"]`
+                            );
+
+                        if (activeDot) {
+                            activeDot.classList.add("active");
+                        }
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: 0.55
+            }
+
+        );
+
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+
+        /* Keyboard navigation */
+
+        document.addEventListener("keydown", event => {
+
+            const current =
+                [...sections].findIndex(section => {
+
+                    const rect =
+                        section.getBoundingClientRect();
+
+                    return (
+                        rect.top >= -200 &&
+                        rect.top <= window.innerHeight / 2
+                    );
+
+                });
+
+            if (event.key === "ArrowDown" && current < sections.length - 1) {
+
+                sections[current + 1].scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            }
+
+            if (event.key === "ArrowUp" && current > 0) {
+
+                sections[current - 1].scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
